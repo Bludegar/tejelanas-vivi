@@ -5,6 +5,7 @@ import AboutUs from './components/AboutUs';
 import Products from './components/Products';
 import Faq from './components/Faq';
 import Contact from './components/Contact';
+import './index.css';
 
 function App() {
   return (

@@ -48,7 +48,7 @@ function Products() {
   }, []);
 
   return (
-    <section className="products">
+    <section className="products" id="products">
       <h2>Productos</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <div className="product-list">
@@ -69,7 +69,7 @@ function Products() {
       </div>
 
       <h2>Servicios / Talleres</h2>
-      <div className="product-list">
+      <div className="product-list" >
         {servicios.map((s, i) => (
           <div key={i} className="product-card">
             {s.imgs[0] && <img src={s.imgs[0]} alt={s.nombre} />}

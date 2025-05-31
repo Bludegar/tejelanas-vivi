@@ -29,7 +29,7 @@ function AboutUs() {
   }, []);
 
   return (
-    <section className="about-us">
+    <section className="about-us" id="about">
       <h2>¿Quiénes somos?</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <p>{info}</p>
