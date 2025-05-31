@@ -27,7 +27,6 @@ function Products() {
   };
 
   useEffect(() => {
-    console.log('Consultando productos y servicios...');
     fetch('https://www.clinicatecnologica.cl/ipss/tejelanasVivi/api/v1/products-services/', {
       headers: {
         Authorization: 'Bearer ipss.get',

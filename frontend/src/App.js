@@ -5,6 +5,7 @@ import ImageCarousel from './components/ImageCarousel';
 import Navbar from './components/Navbar';
 import AboutUs from './components/AboutUs';
 import Products from './components/Products';
+import Faq from './components/Faq';
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -15,11 +16,11 @@ function App() {
   };
 
   return (
-  <div>
-    <Navbar />
-  <AboutUs />
-  <Products />
-
+<div className="App">
+<Navbar />
+<AboutUs />
+<Products />
+<Faq />
 
     <section id="productos">
         <ImageCarousel
