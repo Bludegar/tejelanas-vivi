@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ProductCard from './components/ProductCard';
+import ContactForm from './components/ContactForm';
 
 function App() {
+  const [selectedProduct, setSelectedProduct] = useState('');
+
+  const handleContact = (productName) => {
+    setSelectedProduct(productName);
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 style={{ textAlign: 'center' }}>Tejelanas Vivi</h1>
+
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <ProductCard
+          image="/images/lana-natural.jpg"
+          title="Lana Natural"
+          description="Lana 100% natural ideal para crochet y tejido a palillo."
+          onContact={handleContact}
+        />
+        <ProductCard
+          image="/images/vellon.jpg"
+          title="Vellón para Fieltro"
+          description="Vellón teñido para técnicas de fieltro seco y húmedo."
+          onContact={handleContact}
+        />
+      </div>
+
+      <ContactForm selectedProduct={selectedProduct} />
     </div>
   );
 }
