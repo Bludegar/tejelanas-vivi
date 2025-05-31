@@ -4,7 +4,7 @@ import ContactForm from './components/ContactForm';
 import ImageCarousel from './components/ImageCarousel';
 import Navbar from './components/Navbar';
 import AboutUs from './components/AboutUs';
-
+import Products from './components/Products';
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -15,16 +15,11 @@ function App() {
   };
 
   return (
-    <div>
-      <Navbar />
+  <div>
+    <Navbar />
+  <AboutUs />
+  <Products />
 
-      <div className="App">
-      <AboutUs />
-    </div>
-
-      <section id="inicio">
-        <h1 style={{ textAlign: 'center' }}>Bienvenid@ a Tejelanas Vivi</h1>
-    </section>
 
     <section id="productos">
         <ImageCarousel
