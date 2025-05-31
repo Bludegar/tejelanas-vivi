@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# 🧶 Tejelanas Vivi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Sitio web informativo** creado como solución para la evaluación de la Unidad 3 del módulo de Desarrollo Frontend.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📌 Funcionalidades
 
-### `npm start`
+- Componente reutilizable de tarjeta de producto con imagen, descripción y botón de contacto.
+- Formulario de contacto que se rellena automáticamente con el producto seleccionado.
+- Carrusel responsive y accesible de productos.
+- Navegación interactiva entre secciones.
+- Secciones informativas: Inicio, Productos, Quiénes Somos, Preguntas Frecuentes y Contacto.
+- Código modular y accesible.
+- Validaciones en formulario de contacto.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tecnologías Usadas
 
-### `npm test`
+- React.js (create-react-app)
+- SwiperJS (carrusel)
+- HTML + CSS
+- Git & GitHub
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🗂️ Estructura del Proyecto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+tejelanas-vivi/
+├── public/
+│ └── images/ # Imágenes de productos
+├── src/
+│ ├── components/
+│ │ ├── Navbar.jsx
+│ │ ├── ProductCard.jsx
+│ │ ├── ContactForm.jsx
+│ │ ├── ImageCarousel.jsx
+│ ├── styles.css
+│ ├── App.jsx
+│ └── index.js
+├── README.md
+└── package.json
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 Instalación
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Para clonar y ejecutar este proyecto en local:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clona el repositorio:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```bash
+    git clone https://github.com/tuusuario/tejelanas-vivi.git
+    cd tejelanas-vivi
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. Instala las dependencias:
 
-## Learn More
+    ```bash
+    npm install
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Inicia el servidor de desarrollo:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    ```bash
+    npm start
+    ```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 💬 Guía de Uso
 
-### Analyzing the Bundle Size
+- Las tarjetas de producto tienen un botón "Contáctanos" que activa el formulario con el producto ya seleccionado.
+- El formulario simula un envío exitoso.
+- El carrusel muestra imágenes con controles accesibles y adaptados a pantallas pequeñas.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 👩‍💻 Equipo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Jose Espinoza (Blu)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
