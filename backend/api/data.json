@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lana Natural",
+    "descripcion": "Lana 100% natural ideal para tejido.",
+    "precio": 5000
+  },
+  {
+    "id": 2,
+    "nombre": "Vell\u00f3n",
+    "descripcion": "Vell\u00f3n te\u00f1ido para fieltro seco o h\u00famedo.",
+    "precio": 4000
+  }
+]

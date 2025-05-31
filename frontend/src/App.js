@@ -3,6 +3,8 @@ import ProductCard from './components/ProductCard';
 import ContactForm from './components/ContactForm';
 import ImageCarousel from './components/ImageCarousel';
 import Navbar from './components/Navbar';
+import AboutUs from './components/AboutUs';
+
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -15,9 +17,15 @@ function App() {
   return (
     <div>
       <Navbar />
+
+      <div className="App">
+      <AboutUs />
+    </div>
+
       <section id="inicio">
         <h1 style={{ textAlign: 'center' }}>Bienvenid@ a Tejelanas Vivi</h1>
     </section>
+
     <section id="productos">
         <ImageCarousel
           images={[
@@ -41,15 +49,6 @@ function App() {
           description="Vellón teñido para técnicas de fieltro seco y húmedo."
           onContact={handleContact}
         />
-      </section>
-
-      <section id="quienes-somos">
-        <h2 style={{ textAlign: 'center' }}>Quiénes Somos</h2>
-        <p style={{ maxWidth: '700px', margin: 'auto' }}>
-          En Tejelanas Vivi nos dedicamos a fomentar el tejido y el uso de materiales naturales.
-          Además de vender productos como lana y vellón, realizamos talleres en Laguna de Zapallar
-          para compartir técnicas de crochet con la comunidad.
-        </p>
       </section>
 
       <section id="faq">
