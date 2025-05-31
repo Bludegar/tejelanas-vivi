@@ -1,33 +1,30 @@
-import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import './ImageCarousel.css';
 
-function ImageCarousel({ images }) {
+import lana1 from '../assets/images/lana1.png';
+import lana2 from '../assets/images/lana2.png';
+
+function ImageCarousel() {
+  const images = [lana1, lana2];
+
   return (
-    <div className="carousel-container">
+    <section className="image-carousel">
       <Swiper
-        modules={[Navigation, Pagination, A11y]}
-        spaceBetween={20}
+        modules={[Autoplay]}
+        spaceBetween={0}
         slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
+        loop={true}
+        autoplay={{ delay: 4000, disableOnInteraction: false }} 
       >
-        {images.map((img, index) => (
+        {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <img src={img.src} alt={img.alt} className="carousel-image" />
+            <img src={src} alt={`Lana ${index + 1}`} />
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 }
 

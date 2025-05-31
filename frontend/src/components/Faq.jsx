@@ -27,11 +27,9 @@ function Faq() {
         return res.json();
       })
       .then(data => {
-        console.log('FAQ recibidas:', data);
         setFaqs(data.data.filter(f => f.activo));
       })
       .catch(err => {
-        console.warn('Error al cargar FAQ. Usando datos simulados.', err.message);
         setError('Mostrando preguntas frecuentes simuladas');
         setFaqs(fallbackFaqs);
       });

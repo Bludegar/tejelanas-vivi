@@ -1,84 +1,43 @@
-# 🧶 Tejelanas Vivi
+# Tejelanas Vivi 🧶
 
-**Sitio web informativo** creado como solución para la evaluación de la Unidad 3 del módulo de Desarrollo Frontend.
+Este es el sitio web de Tejelanas Vivi, un emprendimiento que vende lanas naturales y hace talleres de crochet en Laguna de Zapallar. El sitio fue hecho como parte de la evaluación de Frontend y Backend.
 
----
+## ¿Qué incluye el proyecto?
 
-## 📌 Funcionalidades
+- Página web en React con diseño responsivo
+- Carrusel de imágenes en la portada
+- Sección "Quiénes somos"
+- Productos y servicios cargados desde una API
+- Preguntas frecuentes
+- Formulario de contacto con validaciones
+- Backend en PHP con operaciones CRUD simuladas
+- Documentación Swagger de los endpoints
 
-- Componente reutilizable de tarjeta de producto con imagen, descripción y botón de contacto.
-- Formulario de contacto que se rellena automáticamente con el producto seleccionado.
-- Carrusel responsive y accesible de productos.
-- Navegación interactiva entre secciones.
-- Secciones informativas: Inicio, Productos, Quiénes Somos, Preguntas Frecuentes y Contacto.
-- Código modular y accesible.
-- Validaciones en formulario de contacto.
+## ¿Cómo lo corro?
 
----
+### Frontend (React)
 
-## 🛠️ Tecnologías Usadas
+```bash
+cd frontend
+npm install
+npm start
+```
 
-- React.js (create-react-app)
-- SwiperJS (carrusel)
-- HTML + CSS
-- Git & GitHub
+### Backend (PHP)
 
----
+1. Instala XAMPP
+2. Mueve la carpeta `backend/` a `htdocs/`
+3. Asegúrate de que Apache esté prendido
+4. Entra a: `http://localhost/backend/productos.php`
 
-## 🗂️ Estructura del Proyecto
+## Autenticación
 
-tejelanas-vivi/
-├── public/
-│ └── images/ # Imágenes de productos
-├── src/
-│ ├── components/
-│ │ ├── Navbar.jsx
-│ │ ├── ProductCard.jsx
-│ │ ├── ContactForm.jsx
-│ │ ├── ImageCarousel.jsx
-│ ├── styles.css
-│ ├── App.jsx
-│ └── index.js
-├── README.md
-└── package.json
+La API externa necesita esta cabecera:
 
+```
+Authorization: Bearer ipss.get
+```
 
----
-
-## 🚀 Instalación
-
-Para clonar y ejecutar este proyecto en local:
-
-1. Clona el repositorio:
-
-    ```bash
-    git clone https://github.com/tuusuario/tejelanas-vivi.git
-    cd tejelanas-vivi
-    ```
-
-2. Instala las dependencias:
-
-    ```bash
-    npm install
-    ```
-
-3. Inicia el servidor de desarrollo:
-
-    ```bash
-    npm start
-    ```
-
----
-
-## 💬 Guía de Uso
-
-- Las tarjetas de producto tienen un botón "Contáctanos" que activa el formulario con el producto ya seleccionado.
-- El formulario simula un envío exitoso.
-- El carrusel muestra imágenes con controles accesibles y adaptados a pantallas pequeñas.
-
----
-
-## 👩‍💻 Equipo
+## Integrantes
 
 - Jose Espinoza (Blu)
-
