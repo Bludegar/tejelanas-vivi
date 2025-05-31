@@ -1,8 +1,9 @@
 openapi: 3.0.0
 info:
-  title: API Tejelanas Vivi
-  version: "1.0.0"
-  description: API REST para gestionar productos del emprendimiento Tejelanas Vivi.
+  title: Tejelanas Vivi API
+  description: API para productos y servicios de Tejelanas Vivi. Contiene operaciones CRUD completas.
+  version: 1.0.0
+
 servers:
   - url: http://localhost/backend
 
@@ -15,86 +16,143 @@ paths:
           description: Lista de productos
           content:
             application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Producto'
+              example:
+                - id: 1
+                  nombre: Falda a Crochet
+                  precio: 9990
+        '500':
+          description: Error interno del servidor
+
     post:
       summary: Crear un nuevo producto
       requestBody:
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/ProductoInput'
-      responses:
-        '201':
-          description: Producto creado exitosamente
-  /products-services/{id}:
-    get:
-      summary: Obtener un producto por ID
-      parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: integer
+            example:
+              nombre: Bufanda tejida
+              precio: 4990
       responses:
         '200':
-          description: Producto encontrado
+          description: Producto creado
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/Producto'
+              example:
+                message: Producto creado
+                producto:
+                  id: 4
+                  nombre: Bufanda tejida
+                  precio: 4990
+        '400':
+          description: Datos inválidos
+
+    put:
+      summary: Actualizar un producto existente
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                nombre:
+                  type: string
+                precio:
+                  type: number
+            example:
+              id: 2
+              nombre: Bufanda Lana Merino
+              precio: 5990
+      responses:
+        '200':
+          description: Producto actualizado
         '404':
           description: Producto no encontrado
-    put:
-      summary: Actualizar un producto
-      parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: integer
+
+    delete:
+  summary: Eliminar un producto
+  parameters:
+    - in: query
+      name: id
+      required: true
+      schema:
+        type: integer
+      description: ID del producto a eliminar
+  responses:
+    '200':
+      description: Producto eliminado
+    '404':
+      description: Producto no encontrado
+
+
+  /servicios.php:
+    get:
+      summary: Obtener todos los servicios
+      responses:
+        '200':
+          description: Lista de servicios
+          content:
+            application/json:
+              example:
+                - id: 1
+                  nombre: Taller Telar Junio
+                  ubicacion: Mall Vivo
+                  fecha: 08/06/2025
+
+    post:
+      summary: Crear un nuevo servicio
       requestBody:
         required: true
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/ProductoInput'
+            example:
+              nombre: Taller Crochet
+              ubicacion: Laguna
+              fecha: 12/08/2025
       responses:
         '200':
-          description: Producto actualizado
+          description: Servicio creado
+
+    put:
+      summary: Actualizar un servicio
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            example:
+              id: 1
+              nombre: Taller Telar Decorativo
+              ubicacion: Santiago
+              fecha: 30/07/2025
+      responses:
+        '200':
+          description: Servicio actualizado
+
     delete:
-      summary: Eliminar un producto
-      parameters:
-        - in: path
-          name: id
-          required: true
-          schema:
-            type: integer
+      summary: Eliminar un servicio
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            example:
+              id: 2
       responses:
         '200':
-          description: Producto eliminado
+          description: Servicio eliminado
+
 components:
-  schemas:
-    Producto:
-      type: object
-      properties:
-        id:
-          type: integer
-        nombre:
-          type: string
-        descripcion:
-          type: string
-        precio:
-          type: number
-    ProductoInput:
-      type: object
-      properties:
-        nombre:
-          type: string
-        descripcion:
-          type: string
-        precio:
-          type: number
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - bearerAuth: []
+
+x-performance:
+  rateLimiting: 60 requests/min
+  cache: 2 min
+  expectedResponseTime: "<500ms"
