@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductCard from './components/ProductCard';
 import ContactForm from './components/ContactForm';
+import ImageCarousel from './components/ImageCarousel';
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -9,6 +10,15 @@ function App() {
     setSelectedProduct(productName);
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   };
+
+  
+  <ImageCarousel
+  images={[
+    { src: '/images/lana1.jpg', alt: 'Lana natural 1' },
+    { src: '/images/lana2.jpg', alt: 'Lana natural 2' },
+    { src: '/images/vellon1.jpg', alt: 'Vellón 1' },
+  ]}
+/>
 
   return (
     <div>
@@ -28,6 +38,7 @@ function App() {
           onContact={handleContact}
         />
       </div>
+
 
       <ContactForm selectedProduct={selectedProduct} />
     </div>
