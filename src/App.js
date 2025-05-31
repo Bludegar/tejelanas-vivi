@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ProductCard from './components/ProductCard';
 import ContactForm from './components/ContactForm';
 import ImageCarousel from './components/ImageCarousel';
+import Navbar from './components/Navbar';
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -11,20 +12,23 @@ function App() {
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
   };
 
-  
-  <ImageCarousel
-  images={[
-    { src: '/images/lana1.jpg', alt: 'Lana natural 1' },
-    { src: '/images/lana2.jpg', alt: 'Lana natural 2' },
-    { src: '/images/vellon1.jpg', alt: 'Vellón 1' },
-  ]}
-/>
-
   return (
     <div>
-      <h1 style={{ textAlign: 'center' }}>Tejelanas Vivi</h1>
+      <Navbar />
+      <section id="inicio">
+        <h1 style={{ textAlign: 'center' }}>Bienvenid@ a Tejelanas Vivi</h1>
+    </section>
+    <section id="productos">
+        <ImageCarousel
+          images={[
+            { src: '/images/lana1.jpg', alt: 'Lana natural 1' },
+            { src: '/images/lana2.jpg', alt: 'Lana natural 2' },
+            { src: '/images/vellon1.jpg', alt: 'Vellón 1' },
+          ]}
+        />
+      </section>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <section style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         <ProductCard
           image="/images/lana-natural.jpg"
           title="Lana Natural"
@@ -37,10 +41,30 @@ function App() {
           description="Vellón teñido para técnicas de fieltro seco y húmedo."
           onContact={handleContact}
         />
-      </div>
+      </section>
 
+      <section id="quienes-somos">
+        <h2 style={{ textAlign: 'center' }}>Quiénes Somos</h2>
+        <p style={{ maxWidth: '700px', margin: 'auto' }}>
+          En Tejelanas Vivi nos dedicamos a fomentar el tejido y el uso de materiales naturales.
+          Además de vender productos como lana y vellón, realizamos talleres en Laguna de Zapallar
+          para compartir técnicas de crochet con la comunidad.
+        </p>
+      </section>
 
-      <ContactForm selectedProduct={selectedProduct} />
+      <section id="faq">
+        <h2 style={{ textAlign: 'center' }}>Preguntas Frecuentes</h2>
+        <ul style={{ maxWidth: '700px', margin: 'auto' }}>
+          <li><strong>¿Hacen envíos?</strong> Sí, a todo Chile por Starken y Chilexpress.</li>
+          <li><strong>¿Dónde están ubicadas?</strong> En Laguna de Zapallar.</li>
+          <li><strong>¿Cómo puedo inscribirme a un taller?</strong> Escríbenos en el formulario de contacto.</li>
+        </ul>
+      </section>
+
+      <section id="contacto">
+        <ContactForm selectedProduct={selectedProduct} />
+      </section>
+
     </div>
   );
 }
